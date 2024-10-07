@@ -13,6 +13,10 @@ while True:
         imc = peso / (altura ** 2)
         classificacao = ("abaixo do peso" if imc < 18.5 else "com peso normal" if imc < 24.9 else "com sobrepeso" if imc < 29.9 else "com obesidade")
         print(f"Seu IMC é {imc:.2f} e você está atualmente {classificacao}.")
-        break
+        
+        continuar = input("Deseja calcular o IMC de outra pessoa? (s/n): ").strip().lower()
+        if continuar != 's':
+            print("Encerrando o programa. Até mais!")
+            break
     except ValueError as e:
         print(f"Erro: {e}. Por favor, insira valores válidos.")
